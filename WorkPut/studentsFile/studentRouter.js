@@ -8,6 +8,7 @@ const {
   passwordReset,
   newPasswordRequest,
   getAClassStudent,
+  getTeacher,
   getAllStudentsInSchool,
 } = require("../studentsFile/studentsController");
 
@@ -28,6 +29,7 @@ router.route("/reset/:id/:token").post(passwordReset);
 
 //Teacher ID
 router.route("/:id").get(getStudents);
+router.route("/teacher/:teacher").get(getTeacher);
 
 router.route("/classStu/:classID").get(getAClassStudent);
 

@@ -18,6 +18,10 @@ app.use("/api/class", require("./WorkPut/classFile/classRouter"));
 app.use("/api/student", require("./WorkPut/studentsFile/studentRouter"));
 app.use("/api/expense", require("./WorkPut/Expense/ExpensesRoute"));
 app.use("/api/subject", require("./WorkPut/subjectFile/subjectRouter"));
+app.use(
+  "/api/performance",
+  require("./WorkPut/performanceFile/performanceRouter")
+);
 
 app.listen(port, () => {
   console.log("server is now connected");

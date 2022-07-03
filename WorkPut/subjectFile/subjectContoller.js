@@ -56,9 +56,20 @@ const getAllSubjects = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+const getSubjectInClass = async (req, res) => {
+  try {
+    const users = await subjectModel
+      .findById(req.params.subject)
+      .populate("studentsPerformance");
+    res.status(200).json({ message: "Subject found", data: users });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 module.exports = {
   createSubject,
   getAllSubjects,
   getSubjectsInAClass,
+  getSubjectInClass,
 };

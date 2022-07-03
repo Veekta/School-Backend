@@ -4,10 +4,11 @@ const {
   createSubject,
   getAllSubjects,
   getSubjectsInAClass,
+  getSubjectInClass,
 } = require("../subjectFile/subjectContoller");
 
 router.route("/:id").post(createSubject);
 router.route("/").get(getAllSubjects);
-// router.route("/:classID").get(getSubjectsInAClass);
+router.route("/:subject").get(getSubjectInClass);
 router.route("/:classID").get(getSubjectsInAClass);
 module.exports = router;

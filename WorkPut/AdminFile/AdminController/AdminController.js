@@ -53,14 +53,8 @@ const deleteSchool = async (req, res) => {
 
 const updateSchool = async (req, res) => {
   try {
-    const {
-      schoolProfile,
-      fullName,
-      schoolName,
-      schoolCode,
-      phoneNumber,
-      displayName,
-    } = req.body;
+    const { schoolProfile, fullName, schoolName, phoneNumber, displayName } =
+      req.body;
 
     const image = await cloudinary.uploader.upload(req.file.path);
 

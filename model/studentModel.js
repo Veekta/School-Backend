@@ -94,7 +94,12 @@ const studentModel = mongoose.Schema(
       type: String,
       default: "student",
     },
-
+    performance: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "performance",
+      },
+    ],
     class: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "classes",

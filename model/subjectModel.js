@@ -23,6 +23,12 @@ const subjectModel = mongoose.Schema(
     classCode: {
       type: String,
     },
+    studentsPerformance: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "performance",
+      },
+    ],
     class: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "classes",
