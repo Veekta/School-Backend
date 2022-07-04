@@ -1,15 +1,17 @@
 require("./utils/db");
+
 // require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
-const port = 2332;
+const port = process.env.PORT || 2332;
 
 app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "We are ready...!" });
+  res.status(200).json({ message: "Welcome to <schoolkode/>" });
 });
 
 app.use("/api/admin", require("./WorkPut/AdminFile/AdminRouter/AdminRouter"));
