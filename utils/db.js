@@ -1,7 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const url = process.env.URL;
 
-const urls = "mongodb://localhost/schoolManagementDB";
+// const urls = "mongodb://localhost/schoolManagementDB";
 
 mongoose
   .connect(url)
