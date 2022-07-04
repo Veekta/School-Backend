@@ -17,7 +17,7 @@ const getSchoolTeacher = async (req, res) => {
   try {
     const users = await adminModel
       .findById(req.params.id)
-      .populate({ path: "class", options: { sort: { createdAt: -1 } } });
+      .populate({ path: "teacher", options: { sort: { createdAt: -1 } } });
     res.status(200).json({ message: "Teachers found", data: users });
   } catch (error) {
     res.status(404).json({ message: error.message });

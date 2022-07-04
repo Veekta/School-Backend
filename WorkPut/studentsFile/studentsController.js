@@ -129,18 +129,21 @@ const getTeacher = async (req, res) => {
   }
 };
 
-const getStudents = async (req, res) => {
+const getStudent = async (req, res) => {
   try {
-    const users = await studentModel.find().sort({ createdAt: -1 });
+    const users = await studentModel
+      .findById(req.params.id)
+      .sort({ createdAt: -1 });
     res.status(200).json({ message: "Student found", data: users });
   } catch (error) {
     res.status(404).json({ message: error.message });
+    console.log(error);
   }
 };
 
-const getStudent = async (req, res) => {
+const getStudents = async (req, res) => {
   try {
-    const users = await classModel.findById(req.params.id).populate("class");
+    const users = await classModel.findById(req.params.id).populate("student");
     res.status(200).json({ message: "Student found", data: users });
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -269,9 +272,9 @@ module.exports = {
   createStudent,
   signinStudent,
   deleteStudent,
-  getStudents,
-  updateStudent,
   getStudent,
+  updateStudent,
+  getStudents,
   passwordReset,
   newPasswordRequest,
   getAClassStudent,

@@ -9,14 +9,13 @@ const {
   newPasswordRequest,
   getAClassStudent,
   getTeacher,
-  getAllStudentsInSchool,
 } = require("../studentsFile/studentsController");
 
 const { Image3 } = require("../../utils/multer");
 const express = require("express");
 const router = express.Router();
 
-router.route("/").get(getStudent);
+router.route("/:id").get(getStudent);
 
 router.route("/register").post(createStudent);
 
@@ -28,7 +27,7 @@ router.route("/reset/:id/:token").post(passwordReset);
 // // router.route("/:id/school").get(getTeacherSchool);
 
 //Teacher ID
-router.route("/:id").get(getStudents);
+router.route("/:id/students").get(getStudents);
 router.route("/teacher/:teacher").get(getTeacher);
 
 router.route("/classStu/:classID").get(getAClassStudent);
