@@ -7,7 +7,7 @@ const {
   getStudent,
   passwordReset,
   newPasswordRequest,
-  getAClassStudent,
+
   getTeacher,
 } = require("../studentsFile/studentsController");
 
@@ -29,8 +29,6 @@ router.route("/reset/:id/:token").post(passwordReset);
 //Teacher ID
 router.route("/:id/students").get(getStudents);
 router.route("/teacher/:teacher").get(getTeacher);
-
-router.route("/classStu/:classID").get(getAClassStudent);
 
 router.route("/:id").patch(Image3, updateStudent).delete(deleteStudent);
 
