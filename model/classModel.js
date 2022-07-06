@@ -18,7 +18,9 @@ const classModel = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "admins",
     },
-
+    teacherName: {
+      type: String,
+    },
     teacher: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "teachers",

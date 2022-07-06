@@ -104,6 +104,10 @@ const studentModel = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "classes",
     },
+    feeStatus: {
+      type: Boolean,
+      Default: false,
+    },
   },
 
   { timestamps: true }

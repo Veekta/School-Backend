@@ -58,6 +58,12 @@ const teacherModel = mongoose.Schema(
     subject: {
       type: String,
     },
+    students: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "students",
+      },
+    ],
     address: {
       type: String,
     },

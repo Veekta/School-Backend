@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const createSubject = async (req, res) => {
   try {
-    const { subjectName, subjectTeacher, subjectType } = req.body;
+    const { subjectName, subjectType } = req.body;
 
     const getURL = await classModel.findById(req.params.id);
 
@@ -12,7 +12,7 @@ const createSubject = async (req, res) => {
       const getSchool = getURL;
       const newSubject = new subjectModel({
         subjectName,
-        subjectTeacher,
+        subjectTeacher: getURL.teacherName,
         subjectType,
         schoolName: getSchool.schoolName,
         teachCode: getSchool.teacherCode,

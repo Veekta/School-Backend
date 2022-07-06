@@ -20,6 +20,7 @@ const createClass = async (req, res) => {
 
     const createClass = await new classModel({
       className,
+      teacherName: getTeacher.fullName,
       schoolName: getTeacher.schoolName,
       teacherCode: getTeacher.teacherCode,
       classCode: getToken,

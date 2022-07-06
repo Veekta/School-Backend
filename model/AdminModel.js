@@ -36,6 +36,12 @@ const adminModel = mongoose.Schema(
     avatarID: {
       type: String,
     },
+    students: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "students",
+      },
+    ],
     verifiedToken: {
       type: String,
     },
@@ -46,7 +52,6 @@ const adminModel = mongoose.Schema(
       type: String,
       default: "admin",
     },
-
     teacher: [
       {
         type: mongoose.Schema.Types.ObjectId,
