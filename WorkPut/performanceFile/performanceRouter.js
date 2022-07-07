@@ -8,7 +8,6 @@ const {
 } = require("../performanceFile/performanceController");
 
 router.route("/input/:subject/:student").post(createPerformance);
-router.route("/:student/:performance");
 router.route("/:id").get(getSubjectPerformance);
 router.route("/:id/result").get(getStudentPerformance);
 router.route("/:subject/:student/:performance").delete(deletePerformance);

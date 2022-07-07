@@ -1,8 +1,8 @@
 const {
-	deleteClass,
-	createClass,
-	viewClass,
-	viewSingleClass,
+  deleteClass,
+  createClass,
+  viewClass,
+  viewSingleClass,
 } = require("./classController");
 const express = require("express");
 const router = express.Router();
